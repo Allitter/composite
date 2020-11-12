@@ -13,8 +13,8 @@ public class FileReader implements Reader {
     public String read(String path) throws DataException {
         try {
             Path pathToFile = Paths.get(path);
-            List<String> strings = Files.readAllLines(pathToFile);
-            return String.join("\n", strings);
+            List<String> lines = Files.readAllLines(pathToFile);
+            return String.join("\n", lines);
         } catch (IOException e) {
             throw new DataException(e);
         }
